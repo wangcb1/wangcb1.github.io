@@ -55,27 +55,30 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="以本人学习课程为基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYAQL-知识点小结">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;17&#x2F;MYAQL-%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以本人学习课程为基础">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-17T14:22:52.273Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/17/MYAQL-%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Hexo</title>
+  <title>MYAQL-知识点小结 | Hexo</title>
   
 
 
@@ -188,10 +191,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/MYAQL-%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -206,8 +209,9 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
+            MYAQL-知识点小结
             
-            <a href="/2019/10/17/MYAQL-%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/" class="post-title-link" itemprop="url">MYAQL-知识点小结</a>
+
           
         </h1>
 
@@ -241,115 +245,82 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="以本人学习课程为基础"><a href="#以本人学习课程为基础" class="headerlink" title="以本人学习课程为基础"></a>以本人学习课程为基础</h3>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/17/MYAQL-%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+        <h3 id="以本人学习课程为基础"><a href="#以本人学习课程为基础" class="headerlink" title="以本人学习课程为基础"></a>以本人学习课程为基础</h3><a id="more"></a>
+
+<h3 id="使用命令创建删除数据库"><a href="#使用命令创建删除数据库" class="headerlink" title="使用命令创建删除数据库"></a>使用命令创建删除数据库</h3><p>#查看当前所有数据库<br>#SHOW DATABASES;</p>
+<p>#创建数据库 （arr是数据库名）<br>#CREATE DATABASE arr;</p>
+<p>#查看数据库的定义<br>#SHOW CREATE DATABASE arr;</p>
+<p>#查看当前所有所在数据库<br>#SHOW DATABASES;</p>
+<p>#删除数据库<br>#DROP DATABASE arr;</p>
+<p>#再次查看数据库定义<br>SHOW CREATE DATABASE arr;<br>…………………………………………………………………………..</p>
+<h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><h3 id="首先创建数据库-stu是数据库名"><a href="#首先创建数据库-stu是数据库名" class="headerlink" title="首先创建数据库(stu是数据库名)"></a>首先创建数据库(stu是数据库名)</h3><p>#CREATE DATABASE stu;</p>
+<p>#选择创建表的数据库<br>#use stu;</p>
+<p>#创建表 （boss是表名）<br>CREATE TABLE boss<br>(<br>ID CHAR(10),<br>Stuname VARCHAR(20),<br>number INT(10),<br>Sex CHAR(5)<br>);<br>#………………………………………………………………………….</p>
+<h3 id="操作表中数据"><a href="#操作表中数据" class="headerlink" title="#操作表中数据"></a>#操作表中数据</h3><p>#use stu;</p>
+<p>#查找<br>#SELECT *FROM boss WHERE ID=1;</p>
+<p>#一次添加一行数据<br>/<em>INSERT boss(ID,Stuname,number,Sex)<br>VALUE (2,’王飞飞’,12,’男’);<br>*/<br>#一次添加多行数据<br>/</em>INSERT boss (ID,Stuname,number,Sex)<br>VALUES<br>(3,’王2飞’,13,’男’),<br>(4,’王3飞’,14,’男’),<br>(5,’王4飞’,15,’男’);<br>*/</p>
+<p>#修改表中数据<br>#UPDATE boss SET Stuname=’八弟’ WHERE ID=3;</p>
+<p>#修改表中全部数据<br>UPDATE boss SET number=16;</p>
+<p>#删除所有信息 DELETE FROM 表名；</p>
+<p>#使用 TRUNCATE 删除全部数据<br>注意：TRUNCATE TABLE 命令不能用于有外键约束的表，<br>如果表中存在外键约束则必须使用DELETE命令来删除数据<br>（实际工作中：不建议使用TRUNCATE命令，<br>因为使用它删除的数据不能恢复和还原）</p>
+<p>#…………………………………………………………………………………………………….</p>
+<h3 id="数据查询入门"><a href="#数据查询入门" class="headerlink" title="#数据查询入门"></a>#数据查询入门</h3><p>use mysql;</p>
+<p>#SELECT全表查询 查询命令中使用<em>号，将会返回查询的表中所有列<br>#（如果不使用</em>符号，要查询全表的数据时就需要将全表的列名写出，用逗号分隔）<br>#SELECT *FROM goods;</p>
+<p>#SELECT选择列查询<br>#注意：一般情况下，最好不用使用*符号进行全表查询<br>#（虽节省时间，但获取不需要的数据会降低查询和所使用的应用程序的效率）<br>#SELECT goodsid,goodsing FROM goods;</p>
+<p>/*<br>查询中额别名<br>使用AS为字段名（列名）定义别名<br>（AS不是给表里的字段别名，而是给查询的结果字段取别名<br>所取得别名只限于这一次查询）<br><em>/<br>/*SELECT goodsid AS ‘商品ID’,goodsing AS ‘商品状态’,<br>goodsname AS ‘商品名’ ,goodpec AS ‘商品进价’,<br>goodsnumber AS ‘商品数量’,goodsprice AS ‘商品价格’,<br>goodslate AS ‘商品是否选中’ FROM goods;</em>/<br> #使用空格为字段名（列名）定义别名<br>/*SELECT goodsid  ‘商品ID’,goodsing  ‘商品状态’,<br>goodsname  ‘商品名’ ,goodpec  ‘商品进价’,<br>goodsnumber  ‘商品数量’,goodsprice  ‘商品价格’,<br>goodslate  ‘商品是否选中’ FROM goods;<br>*/</p>
+<p>#条件查询<br>#单条件查询<br>/<em>(查询goodsnumber为NULL，不能用”WHERE goodsnumber=NULL”,<br>正确表达式为：”goodsnumber IS NULL”)</em>/<br>#SELECT goodsname,goodsnumber FROM goods WHERE goodsnumber&gt;1;</p>
+<p>#多条件复合条件查询 （not，and，or）<br>#SELECT goodsname,goodsnumber FROM goods WHERE goodsnumber&gt;1 AND goodsname=’帽子’;</p>
+<p>#使用distinct消除重复行<br>#SELECT DISTINCT goodsid,goodsname FROM goods;</p>
+<p>#使用LIMIT限定查询返回行<br>/*LIMIT 位置偏移量，行数；<br>位置偏移量从0开始（可选参数），从位置偏移量的后一位返回<br>指定返回的记录条数<br>*/<br>#SELECT goodsid,goodsname,goodsnumber FROM goods LIMIT 0,2;</p>
+<p>#单列排序  （ASC升序,DESC降序，NULL值比所有值都要小）<br>#SELECT goodsid,goodsname FROM goods ORDER BY goodsid DESC;</p>
+<p>#多列排序  （ASC升序,DESC降序，NULL值比所有值都要小）<br>/*    例：<br>SELECT ID，姓名，性别，年龄，出生时间 FROM 表名 ORDER BY 年龄 DESC,出生时间 ASC;<br>*/</p>
+<p>#…………………………………………………………………………………………………………………………………………………………….</p>
+<h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><h4 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h4><p>#获得当前日期+时间（date+time）<br>#SELECT NOW();<br>#获得当前日期（date）<br>#SELECT CURDATE();<br>#获得当前时间（time）<br>#SELECT CURTIME();</p>
+<p>#返回日期对应的月份（数字类型）<br>#SELECT MONTH(NOW());<br>#返回日期对应的月份（字符串）<br>#SELECT MONTHNAME(NOW());</p>
+<p>#返回日期对应的工作日的英文名<br>#SELECT DAYNAME(NOW());</p>
+<p>#返回日期对应的一周中的索引值。1表示周日，2表示周一…<br>#SELECT DAYOFWEEK(NOW());</p>
+<p>#返回日期对应的工作日索引。0表示周日，1表示周一…<br>#SELECT WEEKDAY(NOW());</p>
+<p>#计算日期是一年中的第几周<br>#SELECT WEEK(NOW());</p>
+<p>#计算日期是一年中的第几周<br>#SELECT WEEKOFYEAR(NOW());</p>
+<p>#计算日期是一年中的第几天<br>#SELECT DAYOFYEAR(NOW());</p>
+<p>#计算日期是一个月中的第几天<br>#SELECT DAYOFMONTH(NOW());</p>
+
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-    
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/17/JAVA-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9F%A5%E8%AF%86%E7%82%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/2019/10/17/JAVA-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9F%A5%E8%AF%86%E7%82%B9/" class="post-title-link" itemprop="url">JAVA-面向对象知识点</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-10-17 22:09:40 / Modified: 22:13:30" itemprop="dateCreated datePublished" datetime="2019-10-17T22:09:40+08:00">2019-10-17</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <h4 id="以本人学习课程为基础"><a href="#以本人学习课程为基础" class="headerlink" title="以本人学习课程为基础"></a>以本人学习课程为基础</h4>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2019/10/17/JAVA-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9F%A5%E8%AF%86%E7%82%B9/#more" rel="contents">
-                Read more &raquo;
-              </a>
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/17/JAVA-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="next" title="JAVA-面向对象知识点">
+                  <i class="fa fa-chevron-left"></i> JAVA-面向对象知识点
+                </a>
+              
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
       </footer>
+    
   </article>
   
   
   
 
-    
   </div>
-
-  
-
 
 
           </div>
@@ -366,6 +337,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -378,6 +354,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#以本人学习课程为基础"><span class="nav-number">1.</span> <span class="nav-text">以本人学习课程为基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用命令创建删除数据库"><span class="nav-number">2.</span> <span class="nav-text">使用命令创建删除数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据表"><span class="nav-number"></span> <span class="nav-text">创建数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先创建数据库-stu是数据库名"><span class="nav-number">1.</span> <span class="nav-text">首先创建数据库(stu是数据库名)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作表中数据"><span class="nav-number">2.</span> <span class="nav-text">#操作表中数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据查询入门"><span class="nav-number">3.</span> <span class="nav-text">#数据查询入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置函数"><span class="nav-number">4.</span> <span class="nav-text">内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#日期函数"><span class="nav-number">4.1.</span> <span class="nav-text">日期函数</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
